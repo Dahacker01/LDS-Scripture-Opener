@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "LDS Scripture Opener",
+  "version": "1.0",
+  "description": "Quickly open LDS scriptures from a shortcut",
+  "permissions": ["tabs", "sidePanel", "activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "side_panel": {
+    "default_path": "panel.html"
+  },
+  "commands": {
+    "open-scripture-search": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F"
+      },
+      "description": "Open scripture search bar"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
