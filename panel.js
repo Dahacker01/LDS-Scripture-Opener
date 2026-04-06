@@ -86,3 +86,17 @@ window.addEventListener("DOMContentLoaded", () => {
       url || "https://www.churchofjesuschrist.org/study/scriptures";
   });
 });
+
+
+chrome.runtime.onMessage.addListener(async (msg, sender, sendResponse) => {
+
+  
+
+    pendingRef = msg.ref;
+
+  const url = generateScriptureUrl(pendingRef);
+
+  document.getElementById("scriptureFrame").src =
+      url || "https://www.churchofjesuschrist.org/study/scriptures";
+
+});
