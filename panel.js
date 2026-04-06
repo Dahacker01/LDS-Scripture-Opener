@@ -28,7 +28,7 @@ const scriptureBooks = {
   },
 
   dc: {
-    "D&C":"dc"
+    "D&C":"dc","Doctrine and Covenants":"dc","D C":"dc"
   },
 
   pgp: {
@@ -61,7 +61,7 @@ function generateScriptureUrl(reference) {
   let section = null;
   let bookAbbrev = null;
 
-  for (let sec of ["ot","nt","bofm","pgp"]) {
+  for (let sec of ["ot","nt","bofm","pgp","dc"]) {
     if (scriptureBooks[sec][book]) {
       section = sec;
       bookAbbrev = scriptureBooks[sec][book];
