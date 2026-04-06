@@ -23,6 +23,8 @@ chrome.runtime.onMessage.addListener((msg) => {
     scriptureBar.style.width = "300px";
     scriptureBar.style.border = "2px solid #444";
     scriptureBar.style.borderRadius = "6px";
+    scriptureBar.style.backgroundColor = "white";
+    scriptureBar.style.opacity = "1";
 
     document.body.appendChild(scriptureBar);
 
@@ -34,7 +36,6 @@ chrome.runtime.onMessage.addListener((msg) => {
 
         const reference = scriptureBar.value.trim();
 
-     
 
         chrome.runtime.sendMessage({
           action: "openSidebar",
